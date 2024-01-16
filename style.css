@@ -15,14 +15,14 @@ td {
 }
 .image-container {
   align: right;
-  height: 100%;
-  width: 50%;
+  height: 235px;
+  /*width: 50%;*/
   float: right;
 }
 
 img {
-  height: 10%;
-  width: 15%;
+  height: 235px;
+  /*width: 15%;*/
 }
 
 .responsive-img-fill {
@@ -126,26 +126,26 @@ img {
 
 .ZF {
   @media (max-width: 1080px) {
-    font-size: 0.8rem;
+    font-size: 0.73rem;
     line-height: 0.65rem;
   }
 }
 
 .continental {
   @media (max-width: 1080px) {
-    font-size: 0.5rem;
+    font-size: 0.73rem;
   }
 }
 
 .Siemens {
   @media (max-width: 1080px) {
-    font-size: 0.5rem;
+    font-size: 0.73rem;
   }
 }
 
 .tedom {
   @media (max-width: 1080px) {
-    font-size: 0.4rem;
+    font-size: 0.73rem;
   }
 }
 
@@ -219,5 +219,6 @@ img {
 .hlavicka_nadpis {
   @media (max-width: 1080px) {
     line-height: 1rem;
+    padding-top: 2rem;
   }
 }
