@@ -122,3 +122,27 @@ img {
   display: block;
   border-bottom: none;
 }
+
+.ZF {
+  @media (max-width: 576px) {
+    line-height: 0.1rem;
+  }
+}
+
+.continental {
+  @media (max-width: 576px) {
+    line-height: 0.1rem;
+  }
+}
+
+.Siemens {
+  @media (max-width: 576px) {
+    line-height: 0.1rem;
+  }
+}
+
+.tedom {
+  @media (max-width: 576px) {
+    line-height: 0.1rem;
+  }
+}
