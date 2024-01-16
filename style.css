@@ -31,6 +31,7 @@ img {
 
 .hlavicka {
   vertical-align: middle;
+  padding-top: 1rem;
 }
 
 .sloupec2 {
@@ -212,5 +213,11 @@ img {
 .certifikaty {
   @media (max-width: 1080px) {
     font-size: 0.5rem;
+  }
+}
+
+.hlavicka_nadpis {
+  @media (max-width: 1080px) {
+    line-height: 1rem;
   }
 }
