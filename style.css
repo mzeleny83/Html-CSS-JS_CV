@@ -73,28 +73,28 @@ img {
 }
 
 .python {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
 }
 
 .CZV {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
 }
 
 .BC {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
-  line-height: 30px;
+  /*line-height: 30px;*/
 }
 
 .tedom {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
 }
 
 .continental {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
 }
 
@@ -119,30 +119,98 @@ img {
 }
 
 .mgr {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
 }
 
 .ZF {
-  @media (max-width: 576px) {
-    line-height: 0.1rem;
+  @media (max-width: 1080px) {
+    font-size: 0.8rem;
+    line-height: 0.65rem;
   }
 }
 
 .continental {
-  @media (max-width: 576px) {
-    line-height: 0.1rem;
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
   }
 }
 
 .Siemens {
-  @media (max-width: 576px) {
-    line-height: 0.1rem;
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
   }
 }
 
 .tedom {
-  @media (max-width: 576px) {
-    line-height: 0.1rem;
+  @media (max-width: 1080px) {
+    font-size: 0.4rem;
+  }
+}
+
+.hlavicka {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+    line-height: 0.7rem;
+  }
+}
+
+.mgr {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.BC {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.GML {
+  @media (max-width: 1080px) {
+    font-size: 0.8rem;
+  }
+}
+
+.frontend {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.python {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.CZV {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.jazyky {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.odborne_dovednosti {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.IT_dovednosti {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
+  }
+}
+
+.certifikaty {
+  @media (max-width: 1080px) {
+    font-size: 0.5rem;
   }
 }
