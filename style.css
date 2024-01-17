@@ -219,6 +219,6 @@ img {
 .hlavicka_nadpis {
   @media (max-width: 1080px) {
     line-height: 1rem;
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
 }
