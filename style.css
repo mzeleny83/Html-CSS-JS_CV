@@ -30,8 +30,9 @@ img {
 }
 
 .hlavicka {
+  display: block;
   vertical-align: middle;
-  padding-top: 1rem;
+  /*padding-top: 1rem;*/
 }
 
 .sloupec2 {
@@ -102,6 +103,7 @@ img {
 .ZF {
   display: block;
   border-bottom: none;
+  vertical-align: middle;
 }
 
 .UJV {
@@ -126,8 +128,9 @@ img {
 
 .ZF {
   @media (max-width: 1080px) {
-    font-size: 0.73rem;
-    line-height: 0.65rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    vertical-align: middle;
   }
 }
 
@@ -151,26 +154,28 @@ img {
 
 .hlavicka {
   @media (max-width: 1080px) {
-    font-size: 0.5rem;
-    line-height: 0.7rem;
+    vertical-align: middle;
+    font-size: 0.8rem;
+    line-height: 1rem;
   }
 }
 
 .mgr {
   @media (max-width: 1080px) {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 }
 
 .BC {
   @media (max-width: 1080px) {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 }
 
 .GML {
   @media (max-width: 1080px) {
-    font-size: 0.8rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 }
 
@@ -188,7 +193,7 @@ img {
 
 .CZV {
   @media (max-width: 1080px) {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -219,6 +224,6 @@ img {
 .hlavicka_nadpis {
   @media (max-width: 1080px) {
     line-height: 1rem;
-    padding-top: 0rem;
+    /*padding-top: 0rem;*/
   }
 }
