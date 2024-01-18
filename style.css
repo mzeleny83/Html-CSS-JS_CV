@@ -82,6 +82,11 @@ img {
 .CZV {
   /*display: block;*/
   border-bottom: none;
+  /*line-height: 1rem;*/
+}
+
+.CZV_nadpis {
+  line-height: 1rem;
 }
 
 .BC {
@@ -174,8 +179,8 @@ img {
 
 .GML {
   @media (max-width: 1080px) {
-    font-size: 2rem;
-    line-height: 2rem;
+    /*font-size: 1rem;*/
+    line-height: 1rem;
   }
 }
 
