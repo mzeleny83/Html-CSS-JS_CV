@@ -106,7 +106,7 @@ img {
 }
 
 .ZF {
-  display: block;
+  /*display: block;*/
   border-bottom: none;
   vertical-align: middle;
 }
@@ -133,8 +133,8 @@ img {
 
 .ZF {
   @media (max-width: 576px) {
-    font-size: 1rem;
-    line-height: 1rem;
+    /*font-size: 0.8rem;*/
+    /*line-height: 1rem;*/
     vertical-align: middle;
   }
 }
