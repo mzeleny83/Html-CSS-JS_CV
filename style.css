@@ -76,12 +76,12 @@ img {
 
 .python {
   /*display: block;*/
-  border-bottom: none;
+  /*border-bottom: none;*/
 }
 
 .CZV {
   /*display: block;*/
-  border-bottom: none;
+  /*border-bottom: none;*/
   /*line-height: 1rem;*/
 }
 
@@ -91,22 +91,22 @@ img {
 
 .BC {
   /*display: block;*/
-  border-bottom: none;
+  /*border-bottom: none;*/
   /*line-height: 30px;*/
 }
 
 .tedom {
   /*display: block;*/
-  border-bottom: none;
+  /*border-bottom: none;*/
 }
 
 .continental {
-  /*display: block;*/
+  display: block;
   border-bottom: none;
 }
 
 .ZF {
-  /*display: block;*/
+  display: block;
   border-bottom: none;
   vertical-align: middle;
 }
@@ -128,106 +128,106 @@ img {
 
 .mgr {
   /*display: block;*/
-  border-bottom: none;
+  /*border-bottom: none;*/
 }
 
-.ZF {
-  @media (max-width: 576px) {
-    /*font-size: 0.8rem;*/
+@media (max-width: 576px) {
+  .ZF {
+    font-size: 0.5rem;
     /*line-height: 1rem;*/
-    vertical-align: middle;
+    /*vertical-align: middle;*/
   }
 }
 
-.continental {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .continental {
     font-size: 0.73rem;
   }
 }
 
-.Siemens {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .Siemens {
     font-size: 0.73rem;
   }
 }
 
-.tedom {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .tedom {
     font-size: 0.73rem;
   }
 }
 
-.hlavicka {
-  @media (max-width: 576px) {
-    vertical-align: middle;
-    font-size: 0.8rem;
+@media (max-width: 576px) {
+  .hlavicka {
+    /*vertical-align: middle;*/
+    font-size: 0.5rem;
     line-height: 1rem;
   }
 }
 
-.mgr {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .mgr {
     font-size: 0.8rem;
   }
 }
 
-.BC {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .BC {
     font-size: 0.8rem;
   }
 }
 
-.GML {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .GML {
     /*font-size: 1rem;*/
     line-height: 1rem;
   }
 }
 
-.frontend {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .frontend {
     font-size: 0.5rem;
   }
 }
 
-.python {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .python {
     font-size: 0.5rem;
   }
 }
 
-.CZV {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .CZV {
     font-size: 0.8rem;
   }
 }
 
-.jazyky {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .jazyky {
     font-size: 0.5rem;
   }
 }
 
-.odborne_dovednosti {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .odborne_dovednosti {
     font-size: 0.5rem;
   }
 }
 
-.IT_dovednosti {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .IT_dovednosti {
     font-size: 0.5rem;
   }
 }
 
-.certifikaty {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .certifikaty {
     font-size: 0.5rem;
   }
 }
 
-.hlavicka_nadpis {
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .hlavicka_nadpis {
     line-height: 1rem;
     /*padding-top: 0rem;*/
   }
