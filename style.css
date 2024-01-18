@@ -132,7 +132,7 @@ img {
 }
 
 .ZF {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 1rem;
     line-height: 1rem;
     vertical-align: middle;
@@ -140,25 +140,25 @@ img {
 }
 
 .continental {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.73rem;
   }
 }
 
 .Siemens {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.73rem;
   }
 }
 
 .tedom {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.73rem;
   }
 }
 
 .hlavicka {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     vertical-align: middle;
     font-size: 0.8rem;
     line-height: 1rem;
@@ -166,68 +166,68 @@ img {
 }
 
 .mgr {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.8rem;
   }
 }
 
 .BC {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.8rem;
   }
 }
 
 .GML {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     /*font-size: 1rem;*/
     line-height: 1rem;
   }
 }
 
 .frontend {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.5rem;
   }
 }
 
 .python {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.5rem;
   }
 }
 
 .CZV {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.8rem;
   }
 }
 
 .jazyky {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.5rem;
   }
 }
 
 .odborne_dovednosti {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.5rem;
   }
 }
 
 .IT_dovednosti {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.5rem;
   }
 }
 
 .certifikaty {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     font-size: 0.5rem;
   }
 }
 
 .hlavicka_nadpis {
-  @media (max-width: 1080px) {
+  @media (max-width: 576px) {
     line-height: 1rem;
     /*padding-top: 0rem;*/
   }
