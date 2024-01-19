@@ -14,7 +14,7 @@ td {
   vertical-align: middle;
 }
 .image-container {
-  align: right;
+  /*box-align: right;*/
   height: 235px;
   width: 50%;
   float: right;
@@ -31,17 +31,22 @@ img {
 
 @media (max-width: 576px) {
   .image-container {
-    align: right;
+    /*  box-align: right;*/
     height: 60px;
     width: 50%;
     float: right;
   }
 
-  background-image: url("images/Civil.jpg");
-  /*img {
-    height: 100%;*/
+  /*background-image: url("images/Civil.jpg");*/
+
+  img {
+    height: 100%;
+  }
+
+  .responsive-img-fill {
+    object-fit: fill;
+  }
 }
-/*}*/
 
 .hlavicka {
   display: block;
