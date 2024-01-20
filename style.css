@@ -23,6 +23,7 @@ td {
 img {
   height: 100%;
   /*width: 15%;*/
+  float: right;
 }
 
 .responsive-img-fill {
@@ -35,12 +36,15 @@ img {
     height: 60px;
     width: 50%;
     float: right;
+    align-self: right;
   }
 
   /*background-image: url("images/Civil.jpg");*/
 
   img {
     height: 100%;
+    float: right;
+    align-self: right;
   }
 
   .responsive-img-fill {
