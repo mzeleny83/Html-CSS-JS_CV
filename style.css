@@ -33,10 +33,11 @@ img {
 @media (max-width: 576px) {
   .image-container {
     /*  box-align: right;*/
-    height: 60px;
-    width: 50%;
+    height: 100px;
+    width: fit-content;
     float: right;
     align-self: right;
+    background-color: yellow;
   }
 
   /*background-image: url("images/Civil.jpg");*/
@@ -251,7 +252,8 @@ img {
 
 @media (max-width: 576px) {
   .hlavicka_nadpis {
-    /* line-height: 1rem;*/
-    /*padding-top: 0rem;*/
+    padding-top: 0.5rem;
+    line-height: 1.5rem;
+    vertical-align: top;
   }
 }
