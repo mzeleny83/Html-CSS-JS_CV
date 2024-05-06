@@ -10,13 +10,28 @@ table {
   /*background-color: aqua;*/
 }
 
+th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(181, 155, 155);
+}
+
+.odkaz1 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+}
+
 td {
   vertical-align: middle;
 }
 .image-container {
   /*box-align: right;*/
   height: 235px;
-  width: 50%;
+  width: 30%;
   float: right;
 }
 
