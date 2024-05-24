@@ -33,12 +33,14 @@ td {
   height: 235px;
   width: 30%;
   float: right;
+  transition: transform 0.3s;
 }
 
 img {
   height: 100%;
   /*width: 15%;*/
   float: right;
+  transition: transform 0.3s;
 }
 
 .responsive-img-fill {
