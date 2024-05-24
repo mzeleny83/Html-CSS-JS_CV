@@ -28,7 +28,7 @@ th {
 td {
   vertical-align: middle;
 }
-.image-container {
+.image-container img:hover {
   /*box-align: right;*/
   height: 235px;
   width: 30%;
