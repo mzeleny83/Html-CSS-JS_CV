@@ -2,19 +2,18 @@ table,
 th,
 td {
   border: 1px solid;
-  /*background-color: aqua;*/
 }
 
 table {
-  /*max-width: 60%;
-  /*background-color: aqua;*/
+  width: 100%;
+  border-collapse: collapse;
 }
 
 th {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 0;
   background-color: rgb(181, 155, 155);
 }
 
@@ -28,43 +27,44 @@ th {
 td {
   vertical-align: middle;
 }
-.image-container {
-  /*box-align: right;*/
+
+
+.image-container img {
+  max-width: 100%;
+  width:30%
+  display: flex;
+  justify-content: flex-end;
   height: 235px;
-  width: 30%;
-  float: right;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  z-index: 9999;
 }
 
-img:hover {
-  transition: transform 0.3s ease;
-  transform: scale(1.1);
-  height: 100%;
-  /*width: 15%;*/
-  float: right;
-  transition: transform 0.3s;
+.image-container img:hover {
+  position: fixed;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%) scale(3);
+  z-index: 10000;
 }
 
 .responsive-img-fill {
-  object-fit: fill;
+  object-fit: scale-down;
+  float: right;
 }
 
 @media (max-width: 576px) {
   .image-container {
-    /*  box-align: right;*/
     height: 100px;
     width: fit-content;
-    float: right;
-    align-self: right;
     background-color: yellow;
   }
 
-  /*background-image: url("images/Civil.jpg");*/
-
-  img {
+  .image-container img {
+    max-width: 100%;
+    width: 100%;
     height: 100%;
-    float: right;
-    align-self: right;
+    width: 100%;
+    display: block;
   }
 
   .responsive-img-fill {
@@ -75,7 +75,6 @@ img:hover {
 .hlavicka {
   display: block;
   vertical-align: middle;
-  /*padding-top: 1rem;*/
 }
 
 .sloupec2 {
@@ -83,11 +82,9 @@ img:hover {
 }
 
 .sloupec1 {
-  /* border: 1px solid;*/
 }
 
 .sloupec2 {
-  /*border: 1px solid;*/
 }
 
 .black {
@@ -97,6 +94,7 @@ img:hover {
 .lichy {
   background-color: aqua;
 }
+
 .sudy {
   background-color: aquamarine;
 }
@@ -118,14 +116,9 @@ img:hover {
 }
 
 .python {
-  /*display: block;*/
-  /*border-bottom: none;*/
 }
 
 .CZV {
-  /*display: block;*/
-  /*border-bottom: none;*/
-  /*line-height: 1rem;*/
 }
 
 .CZV_nadpis {
@@ -133,14 +126,9 @@ img:hover {
 }
 
 .BC {
-  /*display: block;*/
-  /*border-bottom: none;*/
-  /*line-height: 30px;*/
 }
 
 .tedom {
-  /*display: block;*/
-  /*border-bottom: none;*/
 }
 
 .continental {
@@ -170,15 +158,11 @@ img:hover {
 }
 
 .mgr {
-  /*display: block;*/
-  /*border-bottom: none;*/
 }
 
 @media (max-width: 576px) {
   .ZF {
     font-size: 1rem;
-    /*line-height: 1rem;*/
-    /*vertical-align: middle;*/
   }
 }
 
@@ -202,9 +186,6 @@ img:hover {
 
 @media (max-width: 576px) {
   .hlavicka {
-    /*vertical-align: middle;*/
-    /*font-size: 1rem;*/
-    /*line-height: 1rem;*/
   }
 }
 
@@ -222,7 +203,6 @@ img:hover {
 
 @media (max-width: 576px) {
   .GML {
-    /*font-size: 1rem;*/
     line-height: 1rem;
   }
 }
@@ -267,9 +247,7 @@ img:hover {
   .certifikaty {
     font-size: 1rem;
   }
-}
 
-@media (max-width: 576px) {
   .hlavicka_nadpis {
     padding-top: 0.5rem;
     line-height: 1.5rem;
