@@ -28,9 +28,7 @@ th {
 td {
   vertical-align: middle;
 }
-.image-container img:hover {
-  transition: transform 0.3s ease;
-  transform: scale(1.1);
+.image-container {
   /*box-align: right;*/
   height: 235px;
   width: 30%;
@@ -38,7 +36,9 @@ td {
   transition: transform 0.3s;
 }
 
-img {
+img:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
   height: 100%;
   /*width: 15%;*/
   float: right;
