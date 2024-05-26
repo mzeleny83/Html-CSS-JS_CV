@@ -1,13 +1,13 @@
 nav {
   background-color: #33292a;
-  text-align: justify;
+  text-align: center;
   /*align-content: center;*/
   color: black;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-evenly;
+  display: inline-flex;
+  justify-content: center;
   flex-direction: row;
   list-style: none;
   list-style-type: none;
