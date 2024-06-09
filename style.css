@@ -1,8 +1,7 @@
 nav {
   background-color: #33292a;
   text-align: center;
-  /*align-content: center;*/
-  color: black;
+  color: white;
 }
 
 nav ul {
@@ -10,7 +9,8 @@ nav ul {
   justify-content: center;
   flex-direction: row;
   list-style: none;
-  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 li {
@@ -18,7 +18,7 @@ li {
 }
 
 .czech {
-  color: black;
+  color: white;
   padding-right: 100px;
 }
 
@@ -39,15 +39,15 @@ body {
   align-items: center;
 }
 
-.images {
-  height: 75vh;
-  width: 70%;
-  background-image: url("./images/Nuclear_plant.jpg"),
-    url("./images/automobile_production.jpg"), url("./images/programming.jpg"),
-    url("./images/testing.jpg"), url("./images/HIL.jpg"),
-    url("./images/deska.jpg");
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-position: left top, center top, right top, left center,
-    center center, right center;
+.image {
+  height: 200px; /* Adjust the height and width as needed */
+  width: 200px;
+  background-size: cover;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Zvětšení a otočení obrázku při najetí myši */
+.image:hover {
+  transform: scale(1.5) rotate(15deg); /* Scale the image and rotate */
 }
