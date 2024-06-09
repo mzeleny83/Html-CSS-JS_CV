@@ -51,3 +51,15 @@ body {
 .image:hover {
   transform: scale(1.5) rotate(15deg); /* Scale the image and rotate */
 }
+
+/* style.css */
+
+body {
+  color: black;
+}
+
+p,
+ul,
+li {
+  color: black;
+}
