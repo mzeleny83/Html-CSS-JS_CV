@@ -16,3 +16,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 localStorage.removeItem("hasVoted");
+localStorage.setItem("hasVoted", false);
