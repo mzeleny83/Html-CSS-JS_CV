@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".image");
-  images.forEach((image) => {
-    image.addEventListener("mouseover", () => {
-      image.classList.add("rotate");
-    });
+  // Najdi tlačítko a element pro počítadlo
+  const button = document.querySelector("button");
+  const counterElement = document.querySelector(".counter");
 
-    image.addEventListener("mouseout", () => {
-      image.classList.remove("rotate");
-    });
+  // Nastav počáteční hodnotu počítadla
+  let counter = 0;
+
+  // Přidej posluchač událostí pro kliknutí na tlačítko
+  button.addEventListener("click", () => {
+    // Inkrementuj počítadlo
+    counter++;
+
+    // Aktualizuj text v elementu pro počítadlo
+    counterElement.textContent = counter;
   });
 });
+localStorage.removeItem("hasVoted");

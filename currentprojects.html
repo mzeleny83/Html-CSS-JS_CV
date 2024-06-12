@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,6 +48,15 @@
     </span>
     <p>Currently, I want to develop a mobile application Carpooling oriented to everyday commuting to work within the city, however it would be used even for non work voyages. The goal is that citizens from the neighbourhood connect together and agree to commute together on a regular basis either for work or for non-work ways. Into the application, it would be entered start and end destination and departure time and the app would then match supply and demand for rides in a set distance circle. The result would be a reduction of the traffic load in cities.</p>
     
+    <p>Vote, if you think this is a good idea!</p>
+    <button>
+      Vote
+    </button>
+
+    <p>Counter:</p>
+    <p class="counter">0</p>
+    <p>
+
     <p>For this purpose, I am looking for IT developers with the following focus:<br>
         <ul>
             <li>Kotlin developer</li>
@@ -62,5 +71,46 @@
             <li>Flutter developer</li>
         </ul>
     </p>
-</body>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // For testing purposes, remove the vote status
+        //localStorage.removeItem("hasVoted");
+
+        // Find the button and the counter element
+        const button = document.querySelector("button");
+        const counterElement = document.querySelector(".counter");
+
+        // Check if the user has already voted
+        const hasVoted = localStorage.getItem("hasVoted");
+
+        // If the user has already voted, disable the button
+        if (hasVoted) {
+          button.disabled = true;
+          button.textContent = "You have already voted";
+        }
+
+        // Set the initial counter value
+        let counter = parseInt(counterElement.textContent);
+
+        // Add event listener for button click
+        button.addEventListener("click", () => {
+          if (!hasVoted) {
+            // Increment the counter
+            counter++;
+
+            // Update the counter element's text
+            counterElement.textContent = counter;
+
+            // Save the vote information in localStorage
+            localStorage.setItem("hasVoted", true);
+
+            // Disable the button after voting
+            button.disabled = true;
+            button.textContent = "You have already voted";
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

@@ -49,7 +49,7 @@ body {
 
 /* Zvětšení a otočení obrázku při najetí myši */
 .image:hover {
-  transform: scale(1.5) rotate(15deg); /* Scale the image and rotate */
+  transform: scale(2) rotate(15deg); /* Scale the image and rotate */
 }
 
 /* style.css */
