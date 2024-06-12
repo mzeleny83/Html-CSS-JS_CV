@@ -32,7 +32,7 @@
     <button id="voteButton">Hlasovat</button>
 
     <p>Počítadlo</p>
-    <p class="counter">0</p>
+    <p id="counterValue">0</p>
     <p>Za tímto účelem hledám IT vývojáře následujícího zaměření:<br>
         <ul>
             <li>Kotlin vývojář</li>
@@ -49,34 +49,30 @@
     </p>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const button = document.getElementById("voteButton");
-        const counterElement = document.querySelector(".counter");
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("voteButton");
+            const counterElement = document.getElementById("counterValue");
 
-        let hasVoted = localStorage.getItem("hasVoted");
-        let counter = localStorage.getItem("counter");
+            // Načtení hodnoty počítadla ze storage při načtení stránky
+            let counter = localStorage.getItem("counterValue");
+            if (counter === null) {
+                counter = 0;
+            } else {
+                counter = parseInt(counter);
+                counterElement.textContent = counter;
+                button.disabled = true;
+                button.textContent = "Už jste hlasovali";
+            }
 
-        if (hasVoted === "true") {
-          button.disabled = true;
-          button.textContent = "Už jste hlasovali";
-        }
-
-        if (counter) {
-          counterElement.textContent = counter;
-        }
-
-        button.addEventListener("click", () => {
-          if (hasVoted !== "true") {
-            counter++;
-            counterElement.textContent = counter;
-            localStorage.setItem("hasVoted", "true");
-            localStorage.setItem("counter", counter);
-            hasVoted = "true";
-            button.disabled = true;
-            button.textContent = "Už jste hlasovali";
-          }
+            button.addEventListener("click", () => {
+                // Inkrementace hodnoty počítadla a uložení do storage
+                counter++;
+                counterElement.textContent = counter;
+                localStorage.setItem("counterValue", counter);
+                button.disabled = true;
+                button.textContent = "Už jste hlasovali";
+            });
         });
-      });
     </script>
 </body>
 </html>

@@ -1,19 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Najdi tlačítko a element pro počítadlo
-  const button = document.querySelector("button");
+  const button = document.getElementById("voteButton");
   const counterElement = document.querySelector(".counter");
 
-  // Nastav počáteční hodnotu počítadla
-  let counter = 0;
-
-  // Přidej posluchač událostí pro kliknutí na tlačítko
   button.addEventListener("click", () => {
-    // Inkrementuj počítadlo
-    counter++;
-
-    // Aktualizuj text v elementu pro počítadlo
-    counterElement.textContent = counter;
+    // Increment the counter on the server
+    fetch("https://miroslavzeleny.cz/counter.php", {
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        counterElement.textContent = data.counter;
+        if (data.hasVoted) {
+          button.disabled = true;
+          button.textContent = "Už jste hlasovali";
+        }
+      })
+      .catch((error) => {
+        console.error("Chyba při zpracování požadavku:", error);
+      });
   });
+
+  // Fetch the initial counter value and vote status from the server
+  fetch("https://miroslavzeleny.cz/counter.php")
+    .then((response) => response.json())
+    .then((data) => {
+      counterElement.textContent = data.counter;
+      if (data.hasVoted) {
+        button.disabled = true;
+        button.textContent = "Už jste hlasovali";
+      }
+    })
+    .catch((error) => {
+      console.error("Chyba při načítání počítadla:", error);
+    });
 });
-localStorage.removeItem("hasVoted");
-localStorage.setItem("hasVoted", false);

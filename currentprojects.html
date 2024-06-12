@@ -9,54 +9,29 @@
     <link rel="stylesheet" href="style.css" />
     <meta name="seznam-wmt" content="0XGjkLRwy9DlkKRL5Um2UsxqxMSGZdhp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <style>
-        body {
-            color: black;
-        }
-        p, ul, li {
-            color: black;
-        }
-    </style>
 </head>
 <body>
     <nav>
         <ul>
-          <li class="contact">
-            <a style="color: white" href="contact.html">Contact</a>
-          </li>
-          <li class="services">
-            <a style="color: white" href="services.html">Service offer</a>
-          </li>
-          <li class="CV">
-            <a style="color: white" href="CV.html">CV</a>
-          </li>
-          <li class="currentprojects">
-            <a style="color: white" href="currentprojects.html">Current projects</a>
-          </li>
+            <li class="contact"><a style="color: white" href="contact.html">Contact</a></li>
+            <li class="services"><a style="color: white" href="services.html">Service offer</a></li>
+            <li class="CV"><a style="color: white" href="CV.html">CV</a></li>
+            <li class="currentprojects"><a style="color: white" href="currentprojects.html">Current projects</a></li>
         </ul>
-      </nav>
-        
+    </nav>
     <span class="czech">
-      <a href="aktualniprojekty.html">
-        <img src="images/czech flag.webp" alt="CZ Verze" style="width: 40px; height: 40px" />
-      </a>
+        <a href="aktualniprojekty.html"><img src="images/czech flag.webp" alt="CZ Verze" style="width: 40px; height: 40px" /></a>
     </span>
     <span class="home">
-      <a class="odkaz1" href="index-en.html">
-        <i class="fas fa-home"></i> HOME
-      </a>
+        <a class="odkaz1" href="index-en.html"><i class="fas fa-home"></i> HOME</a>
     </span>
+
     <p>Currently, I want to develop a mobile application Carpooling oriented to everyday commuting to work within the city, however it would be used even for non work voyages. The goal is that citizens from the neighbourhood connect together and agree to commute together on a regular basis either for work or for non-work ways. Into the application, it would be entered start and end destination and departure time and the app would then match supply and demand for rides in a set distance circle. The result would be a reduction of the traffic load in cities.</p>
-    
     <p>Vote, if you think this is a good idea!</p>
-    <button id="voteButton">
-      Vote
-    </button>
+    <button id="voteButton">Vote</button>
 
     <p>Counter:</p>
-    <p class="counter">0</p>
-    <p>
-
+    <p id="counterValue">0</p>
     <p>For this purpose, I am looking for IT developers with the following focus:<br>
         <ul>
             <li>Kotlin developer</li>
@@ -73,45 +48,36 @@
     </p>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Find the button and the counter element
-        const button = document.getElementById("voteButton");
-        const counterElement = document.querySelector(".counter");
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("voteButton");
+            const counterElement = document.getElementById("counterValue");
+            let counter = localStorage.getItem("counter");
 
-        // Retrieve the counter value from localStorage
-        let counter = localStorage.getItem("counter") || 0;
+            if (!counter) {
+                counter = 1;
+                localStorage.setItem("counter", counter);
+            }
 
-        // Display the counter value
-        counterElement.textContent = counter;
+            let hasVoted = localStorage.getItem("hasVoted") === "true";
 
-        // Check if the user has already voted
-        const hasVoted = localStorage.getItem("hasVoted");
-
-        // If the user has already voted, disable the button
-        if (hasVoted === "true") {
-          button.disabled = true;
-          button.textContent = "You have already voted";
-        }
-
-        // Add event listener for button click
-        button.addEventListener("click", () => {
-          if (hasVoted !== "true") {
-            // Increment the counter
-            counter++;
-
-            // Update the counter element's text
             counterElement.textContent = counter;
 
-            // Save the vote information and counter value in localStorage
-            localStorage.setItem("hasVoted", "true");
-            localStorage.setItem("counter", counter);
+            if (hasVoted) {
+                button.disabled = true;
+                button.textContent = "You have already voted";
+            }
 
-            // Disable the button after voting
-            button.disabled = true;
-            button.textContent = "You have already voted";
-          }
+            button.addEventListener("click", () => {
+                if (!hasVoted) {
+                    counter++;
+                    counterElement.textContent = counter;
+                    localStorage.setItem("counter", counter);
+                    localStorage.setItem("hasVoted", true);
+                    button.disabled = true;
+                    button.textContent = "You have already voted";
+                }
+            });
         });
-      });
     </script>
-  </body>
+</body>
 </html>
