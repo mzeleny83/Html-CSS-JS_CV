@@ -32,6 +32,11 @@
 
     <p>Counter:</p>
     <p id="counterValue">0</p>
+
+    <p>Here, you can add your opinion</p>
+    <button class="opinionButton">Add opinion</button>
+    <div class="
+    opinions"></div>
     <p>For this purpose, I am looking for IT developers with the following focus:<br>
         <ul>
             <li>Kotlin developer</li>
@@ -47,35 +52,48 @@
         </ul>
     </p>
 
+
+    <script src="script.js"></script>
+</body>
+</html>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const button = document.getElementById("voteButton");
             const counterElement = document.getElementById("counterValue");
-            let counter = localStorage.getItem("counter");
 
-            if (!counter) {
-                counter = 1;
-                localStorage.setItem("counter", counter);
-            }
+            // Load the counter value from the server when the page loads
+            fetch('https://miroslavzeleny.cz/counter.php')
+                .then(response => response.json())
+                .then(data => {
+                    counterElement.textContent = data.counter;
+                })
+                .catch(error => {
+                    console.error('Error fetching counter:', error);
+                });
 
+            // Check if the user has already voted
             let hasVoted = localStorage.getItem("hasVoted") === "true";
-
-            counterElement.textContent = counter;
-
             if (hasVoted) {
                 button.disabled = true;
                 button.textContent = "You have already voted";
             }
 
             button.addEventListener("click", () => {
-                if (!hasVoted) {
-                    counter++;
-                    counterElement.textContent = counter;
-                    localStorage.setItem("counter", counter);
-                    localStorage.setItem("hasVoted", true);
+                // Send a request to increment the counter on the server
+                fetch('https://miroslavzeleny.cz/counter.php', {
+                    method: 'POST',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    counterElement.textContent = data.counter;
                     button.disabled = true;
                     button.textContent = "You have already voted";
-                }
+                    localStorage.setItem("hasVoted", "true");
+                })
+                .catch(error => {
+                    console.error('Error updating counter:', error);
+                });
             });
         });
     </script>
