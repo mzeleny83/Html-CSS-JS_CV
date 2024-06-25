@@ -34,7 +34,6 @@
     <p>Počítadlo:</p>
     <p id="counterValue">0</p>
 
-    <p>Zde můžete přidat váš názor na projekt</p>
     <button class="opinionButton">Přidat názor</button>
 
     <div class="opinions"></div>
@@ -58,60 +57,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-    <script>
-       document.addEventListener("DOMContentLoaded", () => {
-    // Po načtení obsahu dokumentu se spustí tato funkce
-    const button = document.getElementById("voteButton");
-    // Získání odkazu na tlačítko hlasování pomocí ID
-    const counterElement = document.getElementById("counterValue");
-    // Získání odkazu na prvek, který zobrazuje hodnotu počítadla
-
-    // Načtení hodnoty počítadla ze serveru při načtení stránky
-    fetch('https://miroslavzeleny.cz/counter.php')
-        // Odeslání GET požadavku na server na URL 'https://miroslavzeleny.cz/counter.php'
-        .then(response => response.json())
-        // Po obdržení odpovědi je převedena do formátu JSON
-        .then(data => {
-            counterElement.textContent = data.counter;
-            // Nastavení textového obsahu prvku counterElement na hodnotu počítadla z odpovědi serveru
-        })
-        .catch(error => {
-            console.error('Chyba při získávání dat:', error);
-            // Pokud dojde k chybě při načítání dat ze serveru, je chyba vypsána do konzole
-        });
-
-    // Kontrola, zda uživatel už hlasoval
-    let hasVoted = localStorage.getItem("hasVoted") === "true";
-    // Zjištění, zda je v localStorage uložený klíč "hasVoted" s hodnotou "true"
-    if (hasVoted) {
-        button.disabled = true;
-        // Pokud uživatel už hlasoval, tlačítko je deaktivováno
-        button.textContent = "Už jste hlasovali";
-        // Text tlačítka je změněn na "Už jste hlasovali"
-    }
-
-    button.addEventListener("click", () => {
-        // Přidání události kliknutí na tlačítko hlasování
-        // Odeslání požadavku na server pro inkrementaci hodnoty počítadla
-        fetch('https://miroslavzeleny.cz/counter.php', {
-            method: 'POST',
-            // Odeslání POST požadavku na URL 'https://miroslavzeleny.cz/counter.php'
-        })
-        .then(response => response.json())
-        // Po obdržení odpovědi je převedena do formátu JSON
-        .then(data => {
-            counterElement.textContent = data.counter;
-            // Nastavení textového obsahu prvku counterElement na novou hodnotu počítadla z odpovědi serveru
-            button.disabled = true;
-            // Tlačítko je deaktivováno, aby uživatel nemohl hlasovat znovu
-            button.textContent = "Už jste hlasovali";
-            // Text tlačítka je změněn na "Už jste hlasovali"
-            localStorage.setItem("hasVoted", true);
-            // Uložení informace do localStorage, že uživatel už hlasoval
-        })
-        .catch(error => {
-            console.error('Chyba při získávání dat:', error);
-            // Pokud dojde k chybě při odesílání nebo zpracování požadavku, je chyba vypsána do konzole
-        });
-    });
-});

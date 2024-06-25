@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         counterElement.textContent = data.counter;
         button.disabled = true;
         button.textContent = "Už jste hlasovali";
-        localStorage.setItem("hasVoted", true);
+        localStorage.setItem("hasVoted", "true");
       })
       .catch((error) => {
         console.error("Chyba při získávání dat:", error);
@@ -38,20 +38,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const opinions = document.querySelector(".opinions");
   const opinionButton = document.querySelector(".opinionButton");
 
-  // Funkce pro načtení názorů z localStorage
+  // Funkce pro načtení názorů z serveru
   const loadOpinions = () => {
-    const storedOpinions = localStorage.getItem("opinions");
-    if (storedOpinions) {
-      JSON.parse(storedOpinions).forEach((opinion) => {
-        const p = document.createElement("p");
-        p.textContent = opinion;
-        opinions.prepend(p);
+    fetch("https://miroslavzeleny.cz/opinions.php")
+      .then((response) => response.json())
+      .then((opinionsArray) => {
+        opinionsArray.forEach((opinion) => {
+          const p = document.createElement("p");
+          p.textContent = opinion;
+          opinions.prepend(p);
+        });
+      })
+      .catch((error) => {
+        console.error("Chyba při načítání názorů:", error);
       });
-    }
   };
 
   // Načtení názorů při načtení stránky
   loadOpinions();
+
+  let hasSubmittedOpinion =
+    localStorage.getItem("hasSubmittedOpinion") === "true";
+  if (hasSubmittedOpinion) {
+    opinionButton.disabled = true;
+    opinionButton.textContent = "Názor již přidán";
+  }
 
   opinionButton.addEventListener("click", () => {
     const opinion = prompt("Zde napište váš názor");
@@ -61,11 +72,27 @@ document.addEventListener("DOMContentLoaded", () => {
       p.textContent = opinion;
       opinions.prepend(p);
 
-      // Uložení názoru do localStorage
-      const storedOpinions = localStorage.getItem("opinions");
-      const opinionsArray = storedOpinions ? JSON.parse(storedOpinions) : [];
-      opinionsArray.push(opinion);
-      localStorage.setItem("opinions", JSON.stringify(opinionsArray));
+      // Odeslání názoru na server
+      fetch("https://miroslavzeleny.cz/opinions.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: opinion }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.success) {
+            opinionButton.disabled = true; // Deaktivace tlačítka
+            opinionButton.textContent = "Názor již přidán";
+            localStorage.setItem("hasSubmittedOpinion", "true");
+          } else {
+            console.error("Chyba při ukládání názoru:", result.message);
+          }
+        })
+        .catch((error) => {
+          console.error("Chyba při ukládání názoru:", error);
+        });
     }
   });
 });
