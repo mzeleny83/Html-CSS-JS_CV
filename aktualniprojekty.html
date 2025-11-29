@@ -1,12 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="Aktuální projekty" content="Spolujízda" />
-    <title>Aktuální projekty</title>
+    <meta name="AktuĂˇlnĂ­ projekty" content="SpolujĂ­zda" />
+    <title>AktuĂˇlnĂ­ projekty</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="seznam-wmt" content="0XGjkLRwy9DlkKRL5Um2UsxqxMSGZdhp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
@@ -14,39 +18,40 @@
     <nav class="navigation">
         <ul>
             <li class="kontakt"><a style="color: white" href="kontakt.html">Kontakt</a></li>
-            <li class="nabidka-sluzeb"><a style="color: white" href="nabidka.html">Nabídka služeb</a></li>
-            <li class="zivotopis"><a style="color: white" href="zivotopis.html">Životopis</a></li>
-            <li class="aktualni-projekty"><a style="color: white" href="aktualniprojekty.html">Aktuální projekty</a></li>
+            <li class="nabidka-sluzeb"><a style="color: white" href="nabidka.html">NabĂ­dka sluĹľeb</a></li>
+            <li class="zivotopis"><a style="color: white" href="zivotopis.html">Ĺ˝ivotopis</a></li>
+            <li class="aktualni-projekty"><a style="color: white" href="aktualniprojekty.html">AktuĂˇlnĂ­ projekty</a></li>
         </ul>
     </nav>
     <span class="language">
         <a href="currentprojects.html"><img src="images/Union-Jack.webp" alt="EN Version" style="width: 40px; height: 40px" /></a>
     </span>
     <span class="home">
-        <a class="odkaz1" href="index.html"><i class="fas fa-home"></i> DOMŮ</a>
+        <a class="odkaz1" href="index.html"><i class="fas fa-home"></i> DOMĹ®</a>
     </span>
 
-    <p>Aktuálně vyvíjím aplikaci Spolujízda zaměřenou na sdílení jízd, viz <a href="https://sveztese.cz" target="_blank">https://sveztese.cz</a>.</p>
-    <p>Hlasujte, pokud si myslíte, že jde o dobrý nápad!</p>
+    <p>AktuĂˇlnÄ› vyvĂ­jĂ­m aplikaci SpolujĂ­zda zamÄ›Ĺ™enou na sdĂ­lenĂ­ jĂ­zd, viz <a href="https://sveztese.cz" target="_blank">https://sveztese.cz</a>.</p>
+    <p>Hlasujte, pokud si myslĂ­te, Ĺľe jde o dobrĂ˝ nĂˇpad!</p>
     <button id="voteButton" type="button">Hlasovat</button>
 
-    <p>Počítadlo:</p>
+    <p>PoÄŤĂ­tadlo:</p>
     <p id="counter">Counter: 0</p>
 
-    <h2>Názory</h2>
+    <h2>NĂˇzory</h2>
     <form name="form_nazor" class="opinion-form">
         <label>
-            Jméno nebo přezdívka
-            <input type="text" name="author" placeholder="Vaše jméno" />
+            JmĂ©no nebo pĹ™ezdĂ­vka
+            <input type="text" name="author" placeholder="VaĹˇe jmĂ©no" />
         </label>
         <label>
-            Váš názor
-            <textarea name="text" rows="3" placeholder="Co si myslíte?" required></textarea>
+            VĂˇĹˇ nĂˇzor
+            <textarea name="text" rows="3" placeholder="Co si myslĂ­te?" required></textarea>
         </label>
-        <button id="opinionsBtn" type="button">Přidat názor</button>
+        <button id="opinionsBtn" type="button">PĹ™idat nĂˇzor</button>
     </form>
     <ul id="opinionsList"></ul>
 
     <script src="script.js"></script>
 </body>
 </html>
+
