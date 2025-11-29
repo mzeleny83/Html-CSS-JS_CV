@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cz">
+<html lang="cs">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
@@ -10,7 +10,6 @@
     <meta name="seznam-wmt" content="0XGjkLRwy9DlkKRL5Um2UsxqxMSGZdhp" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
-
 <body>
     <nav class="navigation">
         <ul>
@@ -27,33 +26,27 @@
         <a class="odkaz1" href="index.html"><i class="fas fa-home"></i> DOMŮ</a>
     </span>
 
-    <p>Aktuálně chci vyvinout mobilní aplikaci Spolujizda zaměřenou na každodenní dojíždění za prací v rámci města, ale sloužila by i pro mimopracovní cesty. Cílem je, aby se spojili obyvatelé ze sousedních čtvrtí a domluvili se na pravidelném dojíždění ať už za prací nebo jinam. Do aplikace by se zadala počáteční a cílová destinace a čas výjezdu a aplikace by pak spárovala nabídku a poptávku jízd v nastaveném okruhu vzdálenosti. Výsledkem by bylo snížení dopravní zátěže ve městech.</p>
+    <p>Aktuálně vyvíjím aplikaci Spolujízda zaměřenou na sdílení jízd, viz <a href="https://sveztese.cz" target="_blank">https://sveztese.cz</a>.</p>
     <p>Hlasujte, pokud si myslíte, že jde o dobrý nápad!</p>
-    <button id="voteButton">Hlasovat</button>
+    <button id="voteButton" type="button">Hlasovat</button>
 
     <p>Počítadlo:</p>
-    <p id="counterValue">0</p>
+    <p id="counter">Counter: 0</p>
 
-    <button class="opinionButton">Přidat názor</button>
+    <h2>Názory</h2>
+    <form name="form_nazor" class="opinion-form">
+        <label>
+            Jméno nebo přezdívka
+            <input type="text" name="author" placeholder="Vaše jméno" />
+        </label>
+        <label>
+            Váš názor
+            <textarea name="text" rows="3" placeholder="Co si myslíte?" required></textarea>
+        </label>
+        <button id="opinionsBtn" type="button">Přidat názor</button>
+    </form>
+    <ul id="opinionsList"></ul>
 
-    <div class="opinions"></div>
-
-     
-    <p>Za tímto účelem hledám IT vývojáře následujícího zaměření:<br>
-        <ul>
-            <li>Kotlin vývojář</li>
-            <li>Swift or Objective-C vývojář </li>
-            <li>JavaScript vývojář</li>
-            <li>Android Studio,Xcode,React Native, Flutter or Ionic vývojář</li>
-            <li>RESTful a GraphQL API vývojář</li>
-            <li>Node.js, Python (Django/Flask), Ruby on Rails or Java (Spring) vývojář</li>
-            <li>SQL (e.g.. SQLite for mobile database) and NoSQL database (e.g. Firebase, Realm) vývojář</li>
-            <li>Model-View-ViewModel (MVVM), Model-View-Presenter (MVP) vývojář</li>
-            <li>Interface Builder and Storyboards vývojář</li>
-            <li>Flutter vývojář</li>
-        </ul>
-    </p>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

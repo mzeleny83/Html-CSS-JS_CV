@@ -1,98 +1,137 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Kód pro hlasování
-  const button = document.getElementById("voteButton");
-  const counterElement = document.getElementById("counterValue");
+document.addEventListener("DOMContentLoaded", function () {
+  // Načtení počítadla
+  loadCounter();
 
-  fetch("https://miroslavzeleny.cz/counter.php")
-    .then((response) => response.json())
-    .then((data) => {
-      counterElement.textContent = data.counter;
-    })
-    .catch((error) => {
-      console.error("Chyba při získávání dat:", error);
-    });
-
-  let hasVoted = localStorage.getItem("hasVoted") === "true";
-  if (hasVoted) {
-    button.disabled = true;
-    button.textContent = "Už jste hlasovali";
-  }
-
-  button.addEventListener("click", () => {
-    fetch("https://miroslavzeleny.cz/counter.php", {
-      method: "POST",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        counterElement.textContent = data.counter;
-        button.disabled = true;
-        button.textContent = "Už jste hlasovali";
-        localStorage.setItem("hasVoted", "true");
-      })
-      .catch((error) => {
-        console.error("Chyba při získávání dat:", error);
-      });
-  });
-
-  // Kód pro přidání názoru
-  const opinions = document.querySelector(".opinions");
-  const opinionButton = document.querySelector(".opinionButton");
-
-  // Funkce pro načtení názorů z serveru
-  const loadOpinions = () => {
-    fetch("https://miroslavzeleny.cz/opinions.php")
-      .then((response) => response.json())
-      .then((opinionsArray) => {
-        opinionsArray.forEach((opinion) => {
-          const p = document.createElement("p");
-          p.textContent = opinion;
-          opinions.prepend(p);
-        });
-      })
-      .catch((error) => {
-        console.error("Chyba při načítání názorů:", error);
-      });
-  };
-
-  // Načtení názorů při načtení stránky
+  // Načtení názorů
   loadOpinions();
 
-  let hasSubmittedOpinion =
-    localStorage.getItem("hasSubmittedOpinion") === "true";
-  if (hasSubmittedOpinion) {
-    opinionButton.disabled = true;
-    opinionButton.textContent = "Názor již přidán";
+  // Manipulace s tlačítkem pro hlasování
+  const voteButton = document.getElementById("voteButton");
+  if (voteButton) {
+    voteButton.addEventListener("click", async function () {
+      if (voteButton.disabled) return; // Prevent multiple clicks
+      voteButton.disabled = true; // Disable the button
+      try {
+        await incrementCounter();
+      } catch (error) {
+        console.error("Error incrementing counter:", error);
+      } finally {
+        voteButton.disabled = false; // Re-enable the button
+      }
+    });
+  } else {
+    console.error('Element with id "voteButton" not found.');
   }
 
-  opinionButton.addEventListener("click", () => {
-    const opinion = prompt("Zde napište váš názor");
-
-    if (opinion) {
-      const p = document.createElement("p");
-      p.textContent = opinion;
-      opinions.prepend(p);
-
-      // Odeslání názoru na server
-      fetch("https://miroslavzeleny.cz/opinions.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: opinion }),
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          if (result.success) {
-            opinionButton.disabled = true; // Deaktivace tlačítka
-            opinionButton.textContent = "Názor již přidán";
-            localStorage.setItem("hasSubmittedOpinion", "true");
-          } else {
-            console.error("Chyba při ukládání názoru:", result.message);
-          }
-        })
-        .catch((error) => {
-          console.error("Chyba při ukládání názoru:", error);
-        });
-    }
-  });
+  // Manipulace s tlačítkem pro přidání názoru
+  const opinionsBtn = document.getElementById("opinionsBtn");
+  if (opinionsBtn) {
+    opinionsBtn.addEventListener("click", async function () {
+      if (opinionsBtn.disabled) return; // Prevent multiple clicks
+      opinionsBtn.disabled = true; // Disable the button
+      try {
+        await addOpinion();
+      } catch (error) {
+        console.error("Error adding opinion:", error);
+      } finally {
+        opinionsBtn.disabled = false; // Re-enable the button
+      }
+    });
+  } else {
+    console.error('Element with id "opinionsBtn" not found.');
+  }
 });
+
+async function loadCounter() {
+  try {
+    const response = await fetch("https://miroslavzeleny.cz/counter.php");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    console.log("Counter data received:", data);
+    updateCounterDisplay(data.counter);
+  } catch (error) {
+    console.error("Error fetching counter data:", error);
+  }
+}
+
+function updateCounterDisplay(value) {
+  const counterElement = document.getElementById("counter");
+  if (counterElement) {
+    counterElement.textContent = `Counter: ${value}`;
+  } else {
+    console.error('Element with id "counter" not found.');
+  }
+}
+
+async function incrementCounter() {
+  const response = await fetch("https://miroslavzeleny.cz/counter.php", {
+    method: "POST",
+  });
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  const data = await response.json();
+  console.log("Counter data after increment:", data);
+  updateCounterDisplay(data.counter);
+}
+
+async function loadOpinions() {
+  try {
+    const response = await fetch("https://miroslavzeleny.cz/opinions.php");
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    console.log("Opinions data received:", data);
+    displayOpinions(data);
+  } catch (error) {
+    console.error("Error loading opinions:", error);
+  }
+}
+
+function displayOpinions(opinions) {
+  const opinionsList = document.getElementById("opinionsList");
+  if (opinionsList) {
+    opinionsList.innerHTML = ""; // Vyčištění seznamu názorů
+    opinions.forEach((opinion) => {
+      const li = document.createElement("li");
+      li.textContent = opinion.author + ": " + opinion.text;
+      opinionsList.appendChild(li);
+    });
+  } else {
+    console.error('Element with id "opinionsList" not found.');
+  }
+}
+
+async function addOpinion() {
+  const oForm = document.forms["form_nazor"];
+  if (!oForm) {
+    console.error('Form "form_nazor" not found.');
+    return;
+  }
+
+  const opinionName = oForm.elements["author"]?.value || "";
+  const opinionText = oForm.elements["text"]?.value || "";
+  console.log(opinionName + "," + opinionText);
+
+  if (opinionText.trim()) {
+    console.log(JSON.stringify({ author: opinionName, text: opinionText }));
+    const response = await fetch("https://miroslavzeleny.cz/opinions.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ author: opinionName, text: opinionText }),
+    });
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    console.log("Opinion added:", data);
+    await loadOpinions(); // Reload opinions after adding
+    oForm.reset();
+  }
+}

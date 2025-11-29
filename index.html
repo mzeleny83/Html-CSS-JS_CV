@@ -1,80 +1,140 @@
 <!DOCTYPE html>
-<html lang="cz">
+<html lang="cs">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="Ing. Miroslav Zelený Brno"
-      content="Firma Ing. Miroslav Zelený"
+    <meta name="Ing. Miroslav Zelený" content="Ing. Miroslav Zelený Brno" />
+    <title>Ing. Miroslav Zelený</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
     />
-    <title>Ing. Miroslav Zelený Brno ǀ Elektroinženýr Brno</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="seznam-wmt" content="0XGjkLRwy9DlkKRL5Um2UsxqxMSGZdhp" />
   </head>
   <body>
-    <span class="language">
-      <a href="index-en.html">
-        <img
-          src="https://miroslavzeleny.cz/images/Union-Jack.webp"
-          alt="EN Version"
-          style="width: 40px; height: 40px"
-        />
-      </a>
-    </span>
-    <nav class="navigation">
-      <ul>
-        <li class="kontakt">
-          <a style="color: white" href="kontakt.html">Kontakt</a>
-        </li>
-        <li class="nabidka-sluzeb">
-          <a style="color: white" href="nabidka.html">Nabídka služeb</a>
-        </li>
-        <li class="zivotopis">
-          <a style="color: white" href="zivotopis.html">Životopis</a>
-        </li>
-        <li class="aktualni-projekty">
-          <a style="color: white" href="aktualniprojekty.html"
-            >Aktuální projekty</a
-          >
-        </li>
-      </ul>
-    </nav>
-    <div class="uvod">
-      Vítejte na mých stránkách. Jsem <strong>elektroinženýr z Brna</strong> se
-      zkušenostmi z <strong>elektroenergetiky,</strong>
-      <strong> automobilového průmyslu</strong> a <strong>IT</strong>. Umím
-      programovat v <strong>Pythonu</strong>, <strong>Javě</strong> a trochu v
-      <strong>C++</strong>, kóduji
-      <strong>webové stránky v HTML, CSS a JavaScriptu</strong>. V menu se
-      můžete podívat na mé pracovní zkušenosti a nabídku služeb. Ukázky mých
-      projektů najdete na
-      <a target="_blank" href="https://github.com/mzeleny83?tab=repositories"
-        >Githubu.</a
-      >
-    </div>
-    <div class="image-container">
-      <div
-        class="image"
-        style="background-image: url('images/Nuclear_plant.jpg')"
-      ></div>
-      <div
-        class="image"
-        style="background-image: url('images/automobile_production.jpg')"
-      ></div>
-      <div
-        class="image"
-        style="background-image: url('images/programming.jpg')"
-      ></div>
-      <div
-        class="image"
-        style="background-image: url('images/testing.jpg')"
-      ></div>
-      <div class="image" style="background-image: url('images/HIL.jpg')"></div>
-      <div
-        class="image"
-        style="background-image: url('images/deska.jpg')"
-      ></div>
+    <div class="page-shell">
+      <header class="site-header">
+        <nav class="navigation container">
+          <div class="brand">
+            <span class="brand-mark">MZ</span>
+            <span class="brand-text">Ing. Miroslav Zelený</span>
+          </div>
+          <div class="nav-links">
+            <a href="kontakt.html">Kontakt</a>
+            <a href="nabidka.html">Nabídka služeb</a>
+            <a href="zivotopis.html">Životopis</a>
+            <a href="aktualniprojekty.html">Aktuální projekty</a>
+          </div>
+          <div class="lang-switches">
+            <a class="lang-link" href="index-en.html" aria-label="English version">EN</a>
+            <a class="lang-link" href="index-fr.html" aria-label="French version">FR</a>
+            <a class="lang-link" href="index-de.html" aria-label="German version">DE</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero container">
+          <div class="hero-text">
+            <p class="eyebrow">Vývojář z Brna</p>
+            <h1>Tvořím software a webové aplikace, které řeší praktické problémy.</h1>
+            <p class="lead">
+              15+ let technického backgroundu. Nejraději navrhuji a stavím webové aplikace, API a
+              automatizace v HTML/CSS/JS/PHP, Pythonu nebo Javě. Baví mě hledat elegantní řešení
+              složitých úloh.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="kontakt.html">Kontakt</a>
+              <a
+                class="btn ghost"
+                href="https://github.com/mzeleny83?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Projekty na GitHubu
+              </a>
+            </div>
+            <div class="tagline">
+              <span>Webové aplikace</span>
+              <span>Backend &amp; API</span>
+              <span>Automatizace</span>
+              <span>Data &amp; skripty</span>
+            </div>
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="stat-value">15+</span>
+                <span class="stat-label">let zkušeností</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">světy: SW, data, automatizace</span>
+              </div>
+              <div class="stat">
+                <span class="stat-value">24/7</span>
+                <span class="stat-label">spolehlivost a dokumentace</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="portrait-wrap">
+              <img
+                class="portrait"
+                src="images/Civil.jpg"
+                alt="Portrét Miroslava Zeleného"
+                loading="lazy"
+              />
+              <p class="muted portrait-caption">Miroslav Zelený</p>
+            </div>
+            <div class="thumb-grid">
+              <div class="thumb" style="background-image: url('images/programming.jpg')" aria-label="Vývoj a programování"></div>
+              <div class="thumb" style="background-image: url('images/Nuclear_plant.jpg')" aria-label="Technické projekty"></div>
+              <div class="thumb" style="background-image: url('images/automobile_production.jpg')" aria-label="Průmysl a výroba"></div>
+              <div class="thumb" style="background-image: url('images/testing.jpg')" aria-label="Testování"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="highlights container">
+          <div class="section-header">
+            <p class="eyebrow">Co nabízím</p>
+            <h2>Technické dovednosti v praxi</h2>
+            <p class="muted">
+              Od koncepce a návrhu přes testování až po výsledný produkt. Preferuji jasný plán,
+              rychlé iterace a čistou dokumentaci.
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <div class="pill">Web &amp; software</div>
+              <h3>Vývoj aplikací a API</h3>
+              <p>
+                HTML/CSS/JS/PHP, Python, Java; návrh API a datových modelů; integrace a automatizace
+                procesů.
+              </p>
+            </article>
+            <article class="card">
+              <div class="pill">Testování</div>
+              <h3>Automatizace a validace</h3>
+              <p>
+                Návrh scénářů, automatizace testů, HIL/softwarové simulace, přehledné reporty a
+                sledování kvality.
+              </p>
+            </article>
+            <article class="card">
+              <div class="pill">Data &amp; skripty</div>
+              <h3>Data, skripty a optimalizace</h3>
+              <p>
+                Práce s daty (SQL, GraphQL), skriptování, optimalizace workflow, převody a čištění
+                dat pro analýzu.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
     </div>
     <script src="script.js"></script>
   </body>
